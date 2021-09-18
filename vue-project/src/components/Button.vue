@@ -11,8 +11,8 @@ export default {
         }
     },
     props:{
-        text:String,
-        color:String,
+        text: String,
+        color: String,
     },
     methods:{
         onClick(){
