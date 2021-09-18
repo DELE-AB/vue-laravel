@@ -5,13 +5,22 @@
 <script>
 export default {
     name:'Button',
+    data() {
+        return {
+            clickCount: 0
+        }
+    },
     props:{
         text:String,
         color:String,
     },
     methods:{
         onClick(){
-            this.$emit('btn-click');
+            this.clickCount++;
+            if(this.clickCount == 2) {
+                this.$emit('btn-click');
+                this.clickCount = 0;
+            }
         }
     }
 }
