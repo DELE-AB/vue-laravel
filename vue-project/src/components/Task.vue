@@ -1,5 +1,5 @@
 <template>
-    <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder' : '', 'task']" >
+    <div @click="$emit('toggle-reminder',task.id)" :class="[task.reminder ? 'reminder' : '', 'task']" >
         <h3>{{task.text}}
             <i @click="$emit('delete-task', task.id)" class="fas fa-times"></i>
         </h3>
@@ -13,6 +13,11 @@ export default {
     props:{
         task:Object,
     },
+    methods:{
+        onClick(){
+            console.log('this is a double Click')
+        }
+    }
 
 }
 </script>
